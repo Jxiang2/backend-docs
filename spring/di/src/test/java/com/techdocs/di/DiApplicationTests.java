@@ -1,6 +1,6 @@
 package com.techdocs.di;
 
-import com.techdocs.di.controller.MyController;
+import com.techdocs.di.controller.greeting.MyController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

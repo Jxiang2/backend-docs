@@ -1,4 +1,4 @@
-package com.techdocs.di.svc;
+package com.techdocs.di.svc.greeting;
 
 public interface GreetingSvc {
 

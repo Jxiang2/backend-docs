@@ -1,9 +1,9 @@
-package com.techdocs.di.controller;
+package com.techdocs.di.controller.greeting;
 
-import com.techdocs.di.svc.GreetingSvc;
+import com.techdocs.di.svc.greeting.GreetingSvc;
 
 public class PropertyInjectedController {
-  
+
   GreetingSvc greetingSvc;
 
   public String hello() {
