@@ -3,14 +3,14 @@ package com.techdocs.di.controller.i18n;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 /**
  * Demo Profile
  * 2 service beans have the same name, need profile to indicate which one to use
  */
 
-// @ActiveProfiles({"ES", "dev"}) // either specify all profiles, or do not use this annotation
-// EnGreetingSvc
+@ActiveProfiles({"ES", "dev"}) // either specify all profiles, or do not use this annotation
 @SpringBootTest
 public class Myi18nControllerTest {
 

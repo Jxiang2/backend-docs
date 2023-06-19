@@ -8,8 +8,9 @@ import org.springframework.test.context.ActiveProfiles;
 /**
  * Assignment: Multi profile
  */
-@ActiveProfiles({"qa", "default"}) // either specify all profiles, or do not use this annotation
+
 @SpringBootTest
+@ActiveProfiles({"qa", "EN"}) // either specify all profiles, or do not use this annotation
 class EnvControllerTest {
 
   private final EnvController envController;
