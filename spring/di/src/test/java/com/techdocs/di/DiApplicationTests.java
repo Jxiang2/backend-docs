@@ -9,11 +9,16 @@ import org.springframework.context.ApplicationContext;
 @SpringBootTest
 class DiApplicationTests {
 
-  @Autowired
-  ApplicationContext context;
+
+  private final MyController controller;
+
+  private final ApplicationContext context;
 
   @Autowired
-  MyController controller;
+  public DiApplicationTests(final MyController controller, final ApplicationContext context) {
+    this.controller = controller;
+    this.context = context;
+  }
 
   @Test
   void controllerFromCtx() {
