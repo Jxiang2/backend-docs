@@ -1,14 +1,16 @@
 package com.techdocs.restmvc.pojo;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Data
 @Builder
+@EqualsAndHashCode
+@ToString
 public class Beer {
 
   private UUID id;

@@ -8,9 +8,9 @@ import org.springframework.stereotype.Controller;
 
 import java.util.UUID;
 
-@Controller
-@AllArgsConstructor
 @Slf4j
+@AllArgsConstructor
+@Controller
 public class BeerController {
 
   private final BeerService beerService;
