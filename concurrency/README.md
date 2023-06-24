@@ -16,3 +16,9 @@
 ### Thread vs Process 
 1. Threads share resources inside 1 process, majorly the data in heap
 2. Context switching between threads is faster than processes
+
+
+## Thread fundamentals
+**Police hacker problem**
+
+![IMG_0873](https://github.com/Jxiang2/tech-docs/assets/46456200/f0ea58cb-4b5b-4a0a-980d-93d0407dedfc)
