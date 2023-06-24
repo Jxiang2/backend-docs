@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e362ecaa-f5cd-4d97-88bd-b0773c181dcb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/Fundamental.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/MultiExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/PoliceHacker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/Fundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/Fundamental.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;org.infernus.idea.checkstyle.CheckStyleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Fundamental">
+  <component name="RunManager" selected="Application.PoliceHacker">
     <configuration name="Fundamental" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.techdocs.fundamental.Fundamental" />
       <module name="concurrency" />
@@ -82,8 +84,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PoliceHacker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.techdocs.fundamental.PoliceHacker" />
+      <module name="concurrency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.techdocs.fundamental.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PoliceHacker" />
         <item itemvalue="Application.Fundamental" />
         <item itemvalue="Application.Main" />
       </list>
@@ -106,7 +122,10 @@
       <workItem from="1687369440431" duration="29000" />
       <workItem from="1687384910189" duration="4000" />
       <workItem from="1687384922003" duration="2000" />
-      <workItem from="1687397632148" duration="2473000" />
+      <workItem from="1687397632148" duration="2504000" />
+      <workItem from="1687466694368" duration="1298000" />
+      <workItem from="1687567896480" duration="40000" />
+      <workItem from="1687567951769" duration="3065000" />
     </task>
     <servers />
   </component>

@@ -2,11 +2,12 @@ package org.techdocs.fundamental;
 
 /**
  * Create thread
- * Debug thread code
+ * Debug thread code: break point --> Alt + 5 --> select "Threads"
  */
 public class Fundamental {
 
   public static void main(final String[] args) throws InterruptedException {
+    // Way 1
     final Thread t = new Thread(() -> {
       System.out.println("In the new thread: " + Thread.currentThread().getName());
       System.out.println(Thread.currentThread().getPriority());
@@ -25,6 +26,22 @@ public class Fundamental {
     System.out.println("After thread starts: " + Thread.currentThread().getName());
 
     Thread.sleep(1000);
+
+    // Way 2
+    final Thread t2 = new ThreadClass();
+    t2.start();
+
+  }
+
+  // Way 2
+  private static class ThreadClass extends Thread {
+
+    @Override
+    public void run() {
+      System.out.println("In the new thread: " + this.getName());
+      System.out.println(this.getPriority());
+    }
+
   }
 
 }
