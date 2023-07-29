@@ -31,5 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
-
 .DS_Store
+
+### Misc ###
+*.iml
+.mvn/
+mvnw
+mvnw.cmd
