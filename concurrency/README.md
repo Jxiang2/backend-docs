@@ -26,3 +26,6 @@
 ### Thread Termination
 1. Daemon thread will continue to run in the background after the main thread terminates
 2. interruptions must be HANDLED to stop a worker thread, unless the worker thread is daemon
+
+3. ### Thread Coordination
+![IMG_0923](https://github.com/Jxiang2/tech-docs/assets/46456200/7a0a2b94-4e12-4878-893a-15c3648773f0)
