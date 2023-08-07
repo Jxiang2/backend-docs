@@ -22,3 +22,7 @@
 **Police hacker problem**
 
 ![IMG_0873](https://github.com/Jxiang2/tech-docs/assets/46456200/f0ea58cb-4b5b-4a0a-980d-93d0407dedfc)
+
+### Thread Termination
+1. Daemon thread will continue to run in the background after the main thread terminates
+2. interruptions must be HANDLED to stop a worker thread, unless the worker thread is daemon
