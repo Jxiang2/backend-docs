@@ -9,9 +9,12 @@ public class Fundamental {
   public static void main(final String[] args) throws InterruptedException {
     // Way 1
     final Thread t = new Thread(() -> {
-      System.out.println("In the new thread: " + Thread.currentThread().getName());
-      System.out.println(Thread.currentThread().getPriority());
-
+      System.out.println(
+        "In the new thread: " +
+          Thread.currentThread().getName() +
+          " with priority: " +
+          Thread.currentThread().getPriority()
+      );
       // this will trigger the uncaught exception handler
       throw new RuntimeException("Intentional exception");
     });
