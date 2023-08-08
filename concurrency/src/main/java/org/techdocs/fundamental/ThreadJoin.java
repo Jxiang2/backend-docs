@@ -11,7 +11,7 @@ import java.util.List;
 public class ThreadJoin {
 
   public static void main(final String[] args) throws InterruptedException {
-    final List<Long> inputNumbers = Arrays.asList(10000000000L, 3435L, 35435L, 2324L, 4656L, 23L, 5556L);
+    final List<Long> inputNumbers = Arrays.asList(1000000L, 3435L, 35435L, 2324L, 4656L, 23L, 5556L);
 
     final List<FactorialThread> workerThreads = new ArrayList<>();
 
@@ -25,7 +25,8 @@ public class ThreadJoin {
     }
 
     for (final Thread worker : workerThreads) {
-      worker.join(2000); // if thread does not finish in 2 seconds, continue
+      // wait for 2 seconds for the thread to finish, if not, continue
+      worker.join(2000);
     }
 
     for (int i = 0; i < inputNumbers.size(); i++) {
@@ -53,6 +54,7 @@ public class ThreadJoin {
     @Override
     public void run() {
       this.result = factorial(inputNumber);
+      // after finishing the calculation, set the flag to true
       this.isFinished = true;
     }
 
@@ -62,6 +64,7 @@ public class ThreadJoin {
       for (long i = n; i > 0; i--) {
         tempResult = tempResult.multiply(new BigInteger(Long.toString(i)));
       }
+
       return tempResult;
     }
 

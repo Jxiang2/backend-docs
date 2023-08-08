@@ -9,9 +9,15 @@ import java.math.BigInteger;
 public class ThreadTermination {
 
   public static void main(final String[] args) throws InterruptedException {
-    final Thread thread = new Thread(new LongComputationTask(new BigInteger("2000000000"),
-      new BigInteger("100000000")));
-    //    thread.setDaemon(true); // Daemon thread will continue to run in the background after the main thread terminates
+    final Thread thread = new Thread(
+      new LongComputationTask(
+        new BigInteger("2000000000"),
+        new BigInteger("100000000")
+      )
+    );
+
+    // Daemon thread will continue to run in the background, it will not prevent exiting the main thread
+    thread.setDaemon(true);
     thread.setName("LongComputationThread");
     thread.start();
 

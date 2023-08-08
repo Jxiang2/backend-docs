@@ -26,6 +26,9 @@ public class Fundamental {
 
     System.out.println("Before thread starts: " + Thread.currentThread().getName());
     t.start();
+
+    //    Thread.sleep(10);
+
     System.out.println("After thread starts: " + Thread.currentThread().getName());
 
     Thread.sleep(1000);
