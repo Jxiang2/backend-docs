@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e362ecaa-f5cd-4d97-88bd-b0773c181dcb" name="Changes" comment="join">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/PowerAddition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/performance/ImageProcessing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/performance/ThroughputHttpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/sharing/CriticalSection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/many-flowers.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/performance_test_plan.jmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/search_words.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/war_and_peace.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/Fundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/Fundamental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/ThreadJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/ThreadJoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/ThreadTermination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/ThreadTermination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/techdocs/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/PowerAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/PowerAddition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +70,20 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\code\java\tech-docs\concurrency\src\main\java\org\techdocs\sharing" />
+      <recent name="C:\code\java\tech-docs\concurrency\src\main\resources" />
+      <recent name="C:\code\java\tech-docs\concurrency\src\main\java\org\techdocs\performance" />
+      <recent name="C:\code\java\tech-docs\concurrency" />
       <recent name="C:\code\java\tech-docs\concurrency\src\main\java\org\techdocs\fundamental" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PowerAddition">
-    <configuration name="Fundamental" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.techdocs.fundamental.Fundamental" />
+  <component name="RunManager" selected="Application.CriticalSection">
+    <configuration name="CriticalSection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.techdocs.sharing.CriticalSection" />
       <module name="concurrency" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.techdocs.fundamental.*" />
+          <option name="PATTERN" value="org.techdocs.sharing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,12 +91,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PoliceHacker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.techdocs.fundamental.PoliceHacker" />
+    <configuration name="ImageProcessing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.techdocs.performance.ImageProcessing" />
       <module name="concurrency" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.techdocs.fundamental.*" />
+          <option name="PATTERN" value="org.techdocs.performance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CriticalSection" />
+        <item itemvalue="Application.ImageProcessing" />
         <item itemvalue="Application.PowerAddition" />
         <item itemvalue="Application.ThreadJoin" />
         <item itemvalue="Application.ThreadTermination" />
-        <item itemvalue="Application.Fundamental" />
-        <item itemvalue="Application.PoliceHacker" />
       </list>
     </recent_temporary>
   </component>

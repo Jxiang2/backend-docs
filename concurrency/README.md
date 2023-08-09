@@ -1,32 +1,69 @@
-
 # Concurrency
 
 ## Multithreaded app process
-![Screenshot 2023-06-21 214728](https://github.com/Jxiang2/tech-docs/assets/46456200/5003f88e-8431-4fea-9e03-fa6f1c4ccf10)
 
+![Screenshot 2023-06-21 214728](https://github.com/Jxiang2/tech-docs/assets/46456200/5003f88e-8431-4fea-9e03-fa6f1c4ccf10)
 
 ### Each thread has it's own stack and instruction ptr
 
-**Stack**: place in memory where local variables are stored. and passed into functions
+**Stack**: place in memory where local variables are stored. and passed into functions. Functions are also called here.
+
+**Heap**: place in memory where objects and their class members, static members are stored. Objects are shared between
+threads. Heap is managed by GC.
+
+* objects stay in heap until GC decides to collect them.
+* members of objects are collected when the object is collected.
+* references declared as local variables are allocated on the stack, and the objects they refer to are allocated on the
+  heap.
+* references declared as class members are allocated on the heap, and the objects they refer to are allocated on the
+  heap.
 
 **Instruction ptr**: address of next instruction to execute
 
-**Context switch**: There are way more threads than cores, each process has many threads, each thread compete with each other to be executed on CPU. The series of actions of (1. finish execute thread A 2. schedule thread A out 3. schedule thread B in 4. finish execute thread B) is called context switch. It's the cost of multithreading.
+**Context switch**: There are way more threads than cores, each process has many threads, each thread compete with each
+other to be executed on CPU. The series of actions of (1. finish execute thread A 2. schedule thread A out 3. schedule
+thread B in 4. finish execute thread B) is called context switch. It's the cost of multithreading.
 
-### Thread vs Process 
+### Thread vs Process
+
 1. Threads share resources inside 1 process, majorly the data in heap
 2. Context switching between threads is faster than processes
 
-
 ### Thread fundamentals
+
 **Police hacker problem**
 
 ![IMG_0873](https://github.com/Jxiang2/tech-docs/assets/46456200/f0ea58cb-4b5b-4a0a-980d-93d0407dedfc)
 
 ### Thread Termination
+
 1. If a program has 1 thread running, it won't terminate.
-2. Daemon threads allow program finishes once the main thread terminates, worker threads will contine to run in background. 
+2. Daemon threads allow program finishes once the main thread terminates, worker threads will contine to run in
+   background.
 3. interruptions must be HANDLED to stop a worker thread, unless the worker thread is daemon.
 
 3. ### Thread Coordination
+
 ![IMG_0923](https://github.com/Jxiang2/tech-docs/assets/46456200/7a0a2b94-4e12-4878-893a-15c3648773f0)
+
+1. `thread.join(n)` allow the thread to run for n seconds, if it's not finished, the main thread will continue to run.
+
+### Optimisation
+
+1. Max performance: number of physical cores <= number of thread <= number of physical cores
+
+#### Latency
+
+* Latency is the time it takes to perform some action or to produce some result.
+* By splitting a task into multiple threads, we can reduce the latency of the task.
+
+#### Throughput
+
+* Number of tasks completed per unit of time.
+* Improve throughput by 1) Thread pooling => create threads at beginning to be reused, if threads are busy, task wait a
+  thread to be available in the pool
+
+### Resource Sharing
+
+1. atomic operation: if this operation happens, rest of the system won't be able to access the resource
+   ![IMG_0925.jpg](..%2F..%2F..%2F..%2FUsers%2Fxjyhe%2FOneDrive%2FDesktop%2FIMG_0925.jpg)
