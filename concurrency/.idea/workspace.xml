@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e362ecaa-f5cd-4d97-88bd-b0773c181dcb" name="Changes" comment="join">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/performance/ImageProcessing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/performance/ThroughputHttpServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/sharing/CriticalSection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/many-flowers.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/performance_test_plan.jmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/search_words.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/war_and_peace.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/sharing/DataRace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/sharing/DeadLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/sharing/MetricExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/sharing/Sync.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/techdocs/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/PowerAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/fundamental/PowerAddition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
       <recent name="C:\code\java\tech-docs\concurrency\src\main\java\org\techdocs\fundamental" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CriticalSection">
+  <component name="RunManager" selected="Application.DataRace">
     <configuration name="CriticalSection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.techdocs.sharing.CriticalSection" />
       <module name="concurrency" />
@@ -91,12 +87,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageProcessing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.techdocs.performance.ImageProcessing" />
+    <configuration name="DataRace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.techdocs.sharing.DataRace" />
       <module name="concurrency" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.techdocs.performance.*" />
+          <option name="PATTERN" value="org.techdocs.sharing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PowerAddition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.techdocs.fundamental.PowerAddition" />
+    <configuration name="DeadLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.techdocs.sharing.DeadLock" />
       <module name="concurrency" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.techdocs.fundamental.*" />
+          <option name="PATTERN" value="org.techdocs.sharing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreadJoin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.techdocs.fundamental.ThreadJoin" />
+    <configuration name="Metric" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.techdocs.sharing.Metric" />
       <module name="concurrency" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.techdocs.fundamental.*" />
+          <option name="PATTERN" value="org.techdocs.sharing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreadTermination" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.techdocs.fundamental.ThreadTermination" />
+    <configuration name="MetricExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.techdocs.sharing.MetricExample" />
       <module name="concurrency" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.techdocs.fundamental.*" />
+          <option name="PATTERN" value="org.techdocs.sharing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DataRace" />
+        <item itemvalue="Application.DeadLock" />
+        <item itemvalue="Application.MetricExample" />
+        <item itemvalue="Application.VolatileMetrics" />
         <item itemvalue="Application.CriticalSection" />
-        <item itemvalue="Application.ImageProcessing" />
-        <item itemvalue="Application.PowerAddition" />
-        <item itemvalue="Application.ThreadJoin" />
-        <item itemvalue="Application.ThreadTermination" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +178,10 @@
       <workItem from="1691353862118" duration="2461000" />
       <workItem from="1691379294526" duration="3035000" />
       <workItem from="1691464570341" duration="4092000" />
+      <workItem from="1691585975507" duration="65000" />
+      <workItem from="1691586049781" duration="1706000" />
+      <workItem from="1691635689841" duration="267000" />
+      <workItem from="1691680500294" duration="13325000" />
     </task>
     <task id="LOCAL-00001" summary="join">
       <option name="closed" value="true" />
@@ -191,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691382166114</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="join">
+      <option name="closed" value="true" />
+      <created>1691548356760</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691548356760</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
