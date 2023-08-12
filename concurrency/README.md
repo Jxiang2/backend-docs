@@ -83,3 +83,12 @@ thread B in 4. finish execute thread B) is called context switch. It's the cost 
     * performance is good, but hard to implement, may cause deadlock
       ![IMG_0932](https://github.com/Jxiang2/tech-docs/assets/46456200/f2f1690f-dc0f-4a1c-8238-f1d2055f1209)
 5. Deadlock: avoid circular locking, use tryLock() to avoid deadlock
+
+### Locking API
+1. Withou using Lock API:
+![IMG_0937](https://github.com/Jxiang2/tech-docs/assets/46456200/0100ce91-6be1-406d-90d6-4050ea3344a8)
+  * the current thread try to lock the object
+  * if other threads has got it, the current thread is suspeneded and become not responsive
+2. With Lock API:
+  * With tryLock, if the object is locked by other thread, the current thread can do something else
+
