@@ -9,7 +9,7 @@
 **Stack**: place in memory where local variables are stored. and passed into functions. Functions are also called here.
 
 **Heap**: place in memory where objects and their class members, static members are stored. Objects are shared between
-threads. Heap is managed by GC.
+threads. Heap is managed by ```GC```.
 
 * objects stay in heap until GC decides to collect them.
 * members of objects are collected when the object is collected.
@@ -70,7 +70,7 @@ thread B in 4. finish execute thread B) is called context switch. It's the cost 
     * assignment to reference types are atomic
     * assignment to volatile long double are atomic
     * all other operations are not atomic
-2. Race condition: when 2 or more threads are trying to access the same resource, and one of them is modifying it.
+2. Race condition: multiple threads access a shared resource and at least one thread is modifying it.
 3. Data race: re-ordering of instructions inside methods that cause unexpected results
     * solution: use volatile keyword, now the variable can act like a fence, and prevent re-ordering of instructions
     ![datarace](https://github.com/Jxiang2/tech-docs/assets/46456200/99e3ede6-e0cc-44c3-b92f-afd47d854851)
@@ -87,8 +87,13 @@ thread B in 4. finish execute thread B) is called context switch. It's the cost 
 ### Locking API
 1. Withou using Lock API:
 ![IMG_0937](https://github.com/Jxiang2/tech-docs/assets/46456200/0100ce91-6be1-406d-90d6-4050ea3344a8)
-  * the current thread try to lock the object
-  * if other threads has got it, the current thread is suspeneded and become not responsive
+    * the current thread try to lock the object
+    * if other threads has got it, the current thread is suspeneded and become not responsive
 2. With Lock API:
-  * With tryLock, if the object is locked by other thread, the current thread can do something else
+    * With tryLock, if the object is locked by other thread, the current thread can do something else
+3. ReentrantReadWriteLock (use when read operations are predominant)
+    * why? ```synchronized``` and ```ReenreantLock``` do not allow multiple readers to access a shared resource
+    * mechanism:
+        1. if a **write lock** is acquired, no thread can acquire a **read lock**
+        2. if **at least one** thread holds a **read lock**, no thread can acquire a **write lock**
 
