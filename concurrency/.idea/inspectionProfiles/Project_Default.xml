@@ -6,6 +6,10 @@
         <language minSize="57" name="Java" />
       </Languages>
     </inspection_tool>
+    <inspection_tool class="ExtractMethodRecommender" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="minLength" value="606" />
+      <option name="maxParameters" value="1" />
+    </inspection_tool>
     <inspection_tool class="LocalCanBeFinal" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="REPORT_VARIABLES" value="true" />
       <option name="REPORT_PARAMETERS" value="true" />
