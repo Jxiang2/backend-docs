@@ -73,13 +73,13 @@ thread B in 4. finish execute thread B) is called context switch. It's the cost 
 2. Race condition: when 2 or more threads are trying to access the same resource, and one of them is modifying it.
 3. Data race: re-ordering of instructions inside methods that cause unexpected results
     * solution: use volatile keyword, now the variable can act like a fence, and prevent re-ordering of instructions
-      ![datarace.jpg](..%2F..%2F..%2F..%2FUsers%2Fxjyhe%2FOneDrive%2FDesktop%2Fdatarace.jpg)
+    ![datarace](https://github.com/Jxiang2/tech-docs/assets/46456200/99e3ede6-e0cc-44c3-b92f-afd47d854851)
 4. Locking strategies:
     * coarse-grained lock: lock the whole object, only 1 thread can access the object at a time
     * performance is bad, but easy to implement
-      ![coarse.jpg](..%2F..%2F..%2F..%2FUsers%2Fxjyhe%2FOneDrive%2FDesktop%2Fcoarse.jpg)
+      ![coarse](https://github.com/Jxiang2/tech-docs/assets/46456200/e1f43888-f9a4-403e-831a-2dc290cb3106)
     * fine-grained lock: lock only the part of the object that is being accessed, multiple threads can access the
       object, at the same time, but only 1 thread can access the member that is being locked
     * performance is good, but hard to implement, may cause deadlock
-      ![IMG_0932.jpg](..%2F..%2F..%2F..%2FUsers%2Fxjyhe%2FOneDrive%2FDesktop%2FIMG_0932.jpg)
+      ![IMG_0932](https://github.com/Jxiang2/tech-docs/assets/46456200/f2f1690f-dc0f-4a1c-8238-f1d2055f1209)
 5. Deadlock: avoid circular locking, use tryLock() to avoid deadlock
