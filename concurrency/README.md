@@ -66,9 +66,9 @@ thread B in 4. finish execute thread B) is called context switch. It's the cost 
 ### Resource Sharing
 
 1. Atomic operation: if this operation happens, rest of the system won't be able to access the resource
-    * assignment to primitive types except long double are atomic
-    * assignment to reference types are atomic
-    * assignment to volatile long double are atomic
+    * read/assignment on all primitives except long & double
+    * read/assignment on all references
+    * read/assignment on volatile long & double
     * all other operations are not atomic
 2. Race condition: multiple threads access a shared resource and at least one thread is modifying it.
 3. Data race: re-ordering of instructions inside methods that cause unexpected results
@@ -96,4 +96,16 @@ thread B in 4. finish execute thread B) is called context switch. It's the cost 
     * mechanism:
         1. if a **write lock** is acquired, no thread can acquire a **read lock**
         2. if **at least one** thread holds a **read lock**, no thread can acquire a **write lock**
+
+### Semaphore (Inter-thread communication)
+1. Can be used to restrict the number of users to a particular resource or a group of resources, instead of only allowing one user to access the resource like ```lock```
+2. Any thread can release a semaphore --> inter-thread communication
+3. It is suitable for producer-consumer patterns.
+
+### Condition variable (Inter-thread communication)
+1. ```wait()```: cause the current thread to sleep until another thread wakes it up
+2. ```notify()```: wake up one single thread waiting on the object
+3. ```notifyAll()```: wake up all threads waiting on the object
+4. All of them need to be called in a ```synchronized``` context
+![IMG_0941](https://github.com/Jxiang2/tech-docs/assets/46456200/b33ab3f6-47f2-47d2-bdfa-0741682ff758)
 
