@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e362ecaa-f5cd-4d97-88bd-b0773c181dcb" name="Changes" comment="lock">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/interthread/backpressure/BackPressureDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/interthread/backpressure/MatricesGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/interthread/simplecountdownlatch/Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/techdocs/interthread/simplecountdownlatch/SimpleCountDownLatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +85,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Demo">
+    <configuration name="AtomicReferences" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.techdocs.datastructures.AtomicReferences" />
+      <module name="concurrency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.techdocs.datastructures.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BackPressureDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.techdocs.interthread.backpressure.BackPressureDemo" />
       <module name="concurrency" />
@@ -109,19 +117,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.techdocs.interthread.simplecountdownlatch.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Frontend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.techdocs.lockapi.cryptoboard.Frontend" />
-      <module name="concurrency" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.techdocs.lockapi.cryptoboard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,10 +153,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Demo" />
+        <item itemvalue="Application.AtomicReferences" />
         <item itemvalue="Application.BackPressureDemo" />
         <item itemvalue="Application.MatricesGenerator" />
         <item itemvalue="Application.ReadWriteInventory" />
-        <item itemvalue="Application.Frontend" />
       </list>
     </recent_temporary>
   </component>
@@ -205,6 +200,13 @@
       <workItem from="1691871325664" duration="260000" />
       <workItem from="1691872754843" duration="3092000" />
       <workItem from="1691890638083" duration="6845000" />
+      <workItem from="1691964307824" duration="74000" />
+      <workItem from="1691979569145" duration="598000" />
+      <workItem from="1692104427802" duration="1000" />
+      <workItem from="1692121799526" duration="7000" />
+      <workItem from="1692414722699" duration="100000" />
+      <workItem from="1692502051343" duration="42000" />
+      <workItem from="1692502103909" duration="736000" />
     </task>
     <task id="LOCAL-00001" summary="join">
       <option name="closed" value="true" />
@@ -248,6 +250,17 @@
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="join" />
