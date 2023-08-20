@@ -1,2 +1,4 @@
 # Tech docs
-concurrency, caching, db &amp; springframework etc.
+* Java concurrency
+* Spring framework
+* SQL
