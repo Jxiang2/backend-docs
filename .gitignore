@@ -15,7 +15,7 @@ out/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -35,7 +35,6 @@ build/
 .DS_Store
 
 ### Misc ###
-*.iml
 .mvn/
 mvnw
 mvnw.cmd
