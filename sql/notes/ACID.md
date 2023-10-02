@@ -58,8 +58,6 @@
 
 * Concurrent Updates: if 1 transaction is updating a row, it puts a lock on the row and prevent
   other transactions modifying the row until first transaction commits or rollback
-*
-Example![Screenshot 2023-10-01 at 11.13.42 PM (2).png](..%2F..%2F..%2F..%2F..%2FDesktop%2FScreenshot%202023-10-01%20at%2011.13.42%E2%80%AFPM%20%282%29.png)
 
 ## Dead lock
 
