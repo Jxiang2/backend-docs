@@ -1,4 +1,0 @@
-logging:
-  level:
-    com.techdocs.restmvc: DEBUG
-
