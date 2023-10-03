@@ -1,5 +1,17 @@
 # ACID
 
+## Transaction
+
+#### A collection of operations that performs a single logical function in a database application.
+
+* Transaction Process:
+    1. Scan transaction see if locks are already applied on rows it wants to operate
+    2. If no lock, process transaction and put locks on operated rows until transaction ends
+* Concurrent Updates: if 1 transaction is updating a row, it puts a lock on the row and prevent
+  other transactions modifying the row until first transaction commits or rollback
+* Concurrent Reads: No lock is put on rows that are being read, so multiple transactions can read
+  the same row at the same time
+
 ## Atomicity
 
 #### All queries must succeed, if one fails, all should roll back.
@@ -60,18 +72,6 @@
 * Committed transactions must be persisted in a durable storage (disk) and not lost because of
   system failure
 * Caching database (Redis) does not have guarantee durability
-
-## Transaction
-
-#### A collection of operations that performs a single logical function in a database application.
-
-* Transaction Process:
-    1. Scan transaction see if locks are already applied on rows it wants to operate
-    2. Process transaction and put locks on operated rows until transaction ends
-* Concurrent Updates: if 1 transaction is updating a row, it puts a lock on the row and prevent
-  other transactions modifying the row until first transaction commits or rollback
-* Concurrent Reads: No lock is put on rows that are being read, so multiple transactions can read
-  the same row at the same time
 
 ## Dead lock
 
