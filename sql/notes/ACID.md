@@ -27,37 +27,51 @@
           inconsistent because it reads different number of rows. Those new rows are "phantom"
 
 * Isolation Levels: implemented by DB to fix above problems
-    1. Read Uncommitted
+    1. Read Uncommitted: No isolation, any change from the outside is visible to a transaction
         * Dirty Read: YES
         * Non-Repeatable Read: YES
         * Phantom Read: YES
-    2. Read Committed
+    2. Read Committed: Each query in a transaction only sees committed stuff before the query
         * Dirty Read: NO
         * Non-Repeatable Read: YES
         * Phantom Read: YES
-    3. Repeatable Read
+    3. Repeatable Read: Each query in a transaction only sees UPDATES committed at the start of the
+       transaction
         * Dirty Read: NO
         * Non-Repeatable Read: NO
-        * Phantom Read: YES
-    4. Serializable
+        * Phantom Read: YES (You cannot foresee newly inserted rows)
+    4. Serializable: Each transaction is executed as if it is the only transaction in the system
         * Dirty Read: NO
         * Non-Repeatable Read: NO
         * Phantom Read: NO
 
 ## Consistency
 
-#### Todo
+* Data consistency
+    1. Defined by DB schema, enforced by foreign key constraints, triggers, etc.
+    2. Atomicity and Isolation are needed to ensure consistency
+* Reads consistency
+    1. If a transaction committed a change will a new transaction see the change immediately?
+        * Yes, for a single DB server
+        * No, for a distributed DB system
 
 ## Durability
 
-#### Todo
+* Committed transactions must be persisted in a durable storage (disk) and not lost because of
+  system failure
+* Caching database (Redis) does not have guarantee durability
 
 ## Transaction
 
 #### A collection of operations that performs a single logical function in a database application.
 
+* Transaction Process:
+    1. Scan transaction see if locks are already applied on rows it wants to operate
+    2. Process transaction and put locks on operated rows until transaction ends
 * Concurrent Updates: if 1 transaction is updating a row, it puts a lock on the row and prevent
   other transactions modifying the row until first transaction commits or rollback
+* Concurrent Reads: No lock is put on rows that are being read, so multiple transactions can read
+  the same row at the same time
 
 ## Dead lock
 
