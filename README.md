@@ -1,4 +1,5 @@
 # Tech docs
-* Java concurrency
+* Concurrency
+* Caching
 * Spring framework
 * SQL
