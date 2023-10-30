@@ -19,6 +19,7 @@
     <description>spring-docs</description>
     <modules>
         <module>websocket-chat</module>
+        <module>error-handling</module>
     </modules>
 
     <properties>
