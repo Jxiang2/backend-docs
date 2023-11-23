@@ -1,12 +1,10 @@
 package org.techdocs.lockapi.cryptoboard;
 
-
 import javafx.animation.AnimationTimer;
 import javafx.animation.FillTransition;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -82,7 +80,6 @@ public class Frontend extends Application {
       }
     };
 
-
     // Set up the animation timer and price updater
     animationTimer.start();
     priceUpdater.start();
@@ -149,7 +146,7 @@ public class Frontend extends Application {
       final Label nameLabel = new Label(cryptoName);
       nameLabel.setTextFill(Color.BLUE);
       nameLabel.setOnMousePressed(event -> nameLabel.setTextFill(Color.RED));
-      nameLabel.setOnMouseReleased((EventHandler) event -> nameLabel.setTextFill(Color.BLUE));
+      nameLabel.setOnMouseReleased(event -> nameLabel.setTextFill(Color.BLUE));
 
       grid.add(nameLabel, 0, row);
       grid.add(entry.getValue(), 1, row);
@@ -160,8 +157,8 @@ public class Frontend extends Application {
 
   private Rectangle createBackgroundRectangleWithAnimation(final double width, final double height) {
     final Rectangle backround = new Rectangle(width, height);
-    final FillTransition fillTransition =
-      new FillTransition(Duration.millis(1000), backround, Color.LIGHTGREEN, Color.LIGHTBLUE);
+    final FillTransition fillTransition = new FillTransition(Duration.millis(1000), backround, Color.LIGHTGREEN,
+        Color.LIGHTBLUE);
     fillTransition.setCycleCount(Timeline.INDEFINITE);
     fillTransition.setAutoReverse(true);
     fillTransition.play();

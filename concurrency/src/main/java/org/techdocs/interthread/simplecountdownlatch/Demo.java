@@ -13,7 +13,6 @@ public class Demo {
     worker2.start();
     worker3.start();
 
-
     latch.await(); // block until latch counted down to zero
     System.out.println("All workers finished");
   }

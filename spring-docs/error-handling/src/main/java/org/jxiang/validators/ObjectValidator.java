@@ -22,8 +22,8 @@ public class ObjectValidator<T> {
 
     if (!violations.isEmpty()) {
       final Set<String> errorMessages = violations.stream()
-        .map(ConstraintViolation::getMessage)
-        .collect(Collectors.toSet());
+          .map(ConstraintViolation::getMessage)
+          .collect(Collectors.toSet());
       throw new ObjectNotValidException(errorMessages);
     }
 

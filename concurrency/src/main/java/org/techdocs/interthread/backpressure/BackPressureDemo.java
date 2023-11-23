@@ -25,12 +25,12 @@ public class BackPressureDemo {
     final File inputFile = new File(INPUT_FILE);
     final File outputFile = new File(OUTPUT_FILE);
 
-    final MatricesReaderProducer matricesReader =
-      new MatricesReaderProducer(new FileReader(inputFile), threadSafeQueue);
-    final MatricesMultiplierConsumer matricesConsumer1 =
-      new MatricesMultiplierConsumer(new FileWriter(outputFile), threadSafeQueue);
-    final MatricesMultiplierConsumer matricesConsumer2 =
-      new MatricesMultiplierConsumer(new FileWriter(outputFile), threadSafeQueue);
+    final MatricesReaderProducer matricesReader = new MatricesReaderProducer(new FileReader(inputFile),
+        threadSafeQueue);
+    final MatricesMultiplierConsumer matricesConsumer1 = new MatricesMultiplierConsumer(new FileWriter(outputFile),
+        threadSafeQueue);
+    final MatricesMultiplierConsumer matricesConsumer2 = new MatricesMultiplierConsumer(new FileWriter(outputFile),
+        threadSafeQueue);
 
     matricesConsumer1.start();
     matricesConsumer2.start();
@@ -146,7 +146,6 @@ public class BackPressureDemo {
 
   }
 
-
   private static class ThreadSafeQueue<T> {
 
     private static final int CAPACITY = 5;
@@ -156,7 +155,6 @@ public class BackPressureDemo {
     private boolean isEmpty = true;
 
     private boolean isTerminate = false;
-
 
     // Producer adds matrices to the queue
     public synchronized void add(final T item) {
@@ -202,7 +200,8 @@ public class BackPressureDemo {
       return item;
     }
 
-    // Producer let the consumer know that there are no more matrices to read and to terminate the thread
+    // Producer let the consumer know that there are no more matrices to read and to
+    // terminate the thread
     public synchronized void terminate() {
       isTerminate = true;
       notifyAll();
@@ -211,27 +210,8 @@ public class BackPressureDemo {
   }
 
   private static class MatricesPair {
-
     private float[][] matrix1;
-
     private float[][] matrix2;
-
-    public float[][] getMatrix1() {
-      return matrix1;
-    }
-
-    public void setMatrix1(final float[][] matrix1) {
-      this.matrix1 = matrix1;
-    }
-
-    public float[][] getMatrix2() {
-      return matrix2;
-    }
-
-    public void setMatrix2(final float[][] matrix2) {
-      this.matrix2 = matrix2;
-    }
-
   }
 
 }

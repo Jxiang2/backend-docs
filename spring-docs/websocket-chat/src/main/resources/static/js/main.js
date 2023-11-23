@@ -1,30 +1,36 @@
-'use strict';
+"use strict";
 
 const COLORS = [
-  '#2196F3', '#32c787', '#00BCD4', '#ff5652',
-  '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
+  "#2196F3",
+  "#32c787",
+  "#00BCD4",
+  "#ff5652",
+  "#ffc107",
+  "#ff85af",
+  "#FF9800",
+  "#39bbb0",
 ];
 
-let usernamePage = document.querySelector('#username-page');
-let chatPage = document.querySelector('#chat-page');
-let usernameForm = document.querySelector('#usernameForm');
-let messageForm = document.querySelector('#messageForm');
-let messageInput = document.querySelector('#message');
-let messageArea = document.querySelector('#messageArea');
-let connectingElement = document.querySelector('.connecting');
+let usernamePage = document.querySelector("#username-page");
+let chatPage = document.querySelector("#chat-page");
+let usernameForm = document.querySelector("#usernameForm");
+let messageForm = document.querySelector("#messageForm");
+let messageInput = document.querySelector("#message");
+let messageArea = document.querySelector("#messageArea");
+let connectingElement = document.querySelector(".connecting");
 
 let stompClient = null;
 let username = null;
 
 // ======================= Connect =======================
 function connect(event) {
-  username = document.querySelector('#name').value.trim();
+  username = document.querySelector("#name").value.trim();
 
   if (username) {
-    usernamePage.classList.add('hidden');
-    chatPage.classList.remove('hidden');
+    usernamePage.classList.add("hidden");
+    chatPage.classList.remove("hidden");
 
-    let socket = new SockJS('/ws');
+    let socket = new SockJS("/ws");
     stompClient = Stomp.over(socket);
 
     stompClient.connect({}, onConnected, onError);
@@ -34,51 +40,52 @@ function connect(event) {
 
 function onConnected() {
   // Subscribe to the Public Topic
-  stompClient.subscribe('/topic/public', onMessageReceived);
+  stompClient.subscribe("/topic/public", onMessageReceived);
 
   // Tell your username to the server
-  stompClient.send('/app/chat.addUser',
+  stompClient.send(
+    "/app/chat.addUser",
     {},
-    JSON.stringify({ sender: username, type: 'JOIN' })
-  )
+    JSON.stringify({ sender: username, type: "JOIN" })
+  );
 
-  connectingElement.classList.add('hidden');
+  connectingElement.classList.add("hidden");
 }
 
-
 function onError(error) {
-  connectingElement.textContent = 'Could not connect to WebSocket server. Please refresh this page to try again!';
-  connectingElement.style.color = 'red';
+  connectingElement.textContent =
+    "Could not connect to WebSocket server. Please refresh this page to try again!";
+  connectingElement.style.color = "red";
 }
 
 function onMessageReceived(payload) {
   let message = JSON.parse(payload.body);
 
-  let messageElement = document.createElement('li');
+  let messageElement = document.createElement("li");
 
-  if (message.type === 'JOIN') {
-    messageElement.classList.add('event-message');
-    message.content = message.sender + ' joined!';
-  } else if (message.type === 'LEAVE') {
-    messageElement.classList.add('event-message');
-    message.content = message.sender + ' left!';
+  if (message.type === "JOIN") {
+    messageElement.classList.add("event-message");
+    message.content = message.sender + " joined!";
+  } else if (message.type === "LEAVE") {
+    messageElement.classList.add("event-message");
+    message.content = message.sender + " left!";
   } else {
-    messageElement.classList.add('chat-message');
+    messageElement.classList.add("chat-message");
 
-    let avatarElement = document.createElement('i');
+    let avatarElement = document.createElement("i");
     let avatarText = document.createTextNode(message.sender[0]);
     avatarElement.appendChild(avatarText);
-    avatarElement.style['background-color'] = getAvatarColor(message.sender);
+    avatarElement.style["background-color"] = getAvatarColor(message.sender);
 
     messageElement.appendChild(avatarElement);
 
-    let usernameElement = document.createElement('span');
+    let usernameElement = document.createElement("span");
     let usernameText = document.createTextNode(message.sender);
     usernameElement.appendChild(usernameText);
     messageElement.appendChild(usernameElement);
   }
 
-  let textElement = document.createElement('p');
+  let textElement = document.createElement("p");
   let messageText = document.createTextNode(message.content);
   textElement.appendChild(messageText);
 
@@ -95,10 +102,10 @@ function sendMessage(event) {
     let chatMessage = {
       sender: username,
       content: messageInput.value,
-      type: 'CHAT'
+      type: "CHAT",
     };
-    stompClient.send('/app/chat.sendMessage', {}, JSON.stringify(chatMessage));
-    messageInput.value = '';
+    stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
+    messageInput.value = "";
   }
   event.preventDefault();
 }
@@ -113,5 +120,5 @@ function getAvatarColor(messageSender) {
   return COLORS[index];
 }
 
-usernameForm.addEventListener('submit', connect, true)
-messageForm.addEventListener('submit', sendMessage, true)
+usernameForm.addEventListener("submit", connect, true);
+messageForm.addEventListener("submit", sendMessage, true);

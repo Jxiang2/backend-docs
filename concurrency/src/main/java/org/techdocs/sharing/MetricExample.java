@@ -77,7 +77,6 @@ public class MetricExample {
 
   }
 
-
   // Example 2
   public static class MinMaxMetric {
 
@@ -124,7 +123,8 @@ public class MetricExample {
 
     private long count = 0;
 
-    // Double is not atomic, so we need to use volatile to ensure that the value is always read atomically
+    // Double is not atomic, so we need to use volatile to ensure that the value is
+    // always read atomically
     private volatile double average = 0.0;
 
     public synchronized void addSample(final long sample) {

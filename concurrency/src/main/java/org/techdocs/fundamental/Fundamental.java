@@ -10,11 +10,10 @@ public class Fundamental {
     // Way 1
     final Thread t = new Thread(() -> {
       System.out.println(
-        "In the new thread: " +
-          Thread.currentThread().getName() +
-          " with priority: " +
-          Thread.currentThread().getPriority()
-      );
+          "In the new thread: " +
+              Thread.currentThread().getName() +
+              " with priority: " +
+              Thread.currentThread().getPriority());
       // this will trigger the uncaught exception handler
       throw new RuntimeException("Intentional exception");
     });
@@ -27,7 +26,7 @@ public class Fundamental {
     System.out.println("Before thread starts: " + Thread.currentThread().getName());
     t.start();
 
-    //    Thread.sleep(10);
+    // Thread.sleep(10);
 
     System.out.println("After thread starts: " + Thread.currentThread().getName());
 

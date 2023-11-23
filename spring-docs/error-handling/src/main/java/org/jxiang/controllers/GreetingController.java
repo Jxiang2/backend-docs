@@ -17,9 +17,7 @@ public class GreetingController {
   private final GreetingService service;
 
   @PostMapping
-  public ResponseEntity<String> postGreeting(
-    @RequestBody final Greeting greeting
-  ) {
+  public ResponseEntity<String> postGreeting(@RequestBody final Greeting greeting) {
     final String msg = service.saveGreetings(greeting);
     return ResponseEntity.accepted().body(msg);
   }

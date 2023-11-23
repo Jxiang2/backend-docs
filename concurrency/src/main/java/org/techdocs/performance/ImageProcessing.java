@@ -20,13 +20,12 @@ public class ImageProcessing {
 
     final BufferedImage originalImage = ImageIO.read(new File(SOURCE_FILE));
     final BufferedImage resultImage = new BufferedImage(
-      originalImage.getWidth(),
-      originalImage.getHeight(),
-      BufferedImage.TYPE_INT_RGB
-    );
+        originalImage.getWidth(),
+        originalImage.getHeight(),
+        BufferedImage.TYPE_INT_RGB);
 
     final long startTime = System.currentTimeMillis();
-    //recolorSingleThreaded(originalImage, resultImage);
+    // recolorSingleThreaded(originalImage, resultImage);
     final int numberOfThreads = 1;
     recolorMultithreaded(originalImage, resultImage, numberOfThreads);
     final long endTime = System.currentTimeMillis();
@@ -40,10 +39,9 @@ public class ImageProcessing {
   }
 
   public static void recolorMultithreaded(
-    final BufferedImage originalImage,
-    final BufferedImage resultImage,
-    final int numberOfThreads
-  ) {
+      final BufferedImage originalImage,
+      final BufferedImage resultImage,
+      final int numberOfThreads) {
     final List<Thread> threads = new ArrayList<>();
     final int width = originalImage.getWidth();
     final int height = originalImage.getHeight() / numberOfThreads;
@@ -76,11 +74,10 @@ public class ImageProcessing {
   }
 
   public static void recolorImage(
-    final BufferedImage originalImage,
-    final BufferedImage resultImage,
-    final int leftCorner, final int topCorner,
-    final int width, final int height
-  ) {
+      final BufferedImage originalImage,
+      final BufferedImage resultImage,
+      final int leftCorner, final int topCorner,
+      final int width, final int height) {
     for (int x = leftCorner; x < leftCorner + width && x < originalImage.getWidth(); x++) {
       for (int y = topCorner; y < topCorner + height && y < originalImage.getHeight(); y++) {
         recolorPixel(originalImage, resultImage, x, y);
@@ -89,11 +86,10 @@ public class ImageProcessing {
   }
 
   public static void recolorPixel(
-    final BufferedImage originalImage,
-    final BufferedImage resultImage,
-    final int x,
-    final int y
-  ) {
+      final BufferedImage originalImage,
+      final BufferedImage resultImage,
+      final int x,
+      final int y) {
     final int rgb = originalImage.getRGB(x, y);
 
     final int red = getRed(rgb);

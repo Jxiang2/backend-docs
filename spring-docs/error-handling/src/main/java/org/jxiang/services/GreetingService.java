@@ -13,9 +13,8 @@ public class GreetingService {
 
   public String saveGreetings(final Greeting greeting) {
     validator.validate(greeting);
-    
-    return
-      greeting.getMessage().toUpperCase() +
+
+    return greeting.getMessage().toUpperCase() +
         ": " +
         greeting.getFrom().toUpperCase() +
         " -> " +

@@ -12,7 +12,6 @@ public class SimpleCountDownLatch {
 
   private int count;
 
-
   public SimpleCountDownLatch(final int count) {
     this.count = count;
     if (count < 0) {
@@ -35,7 +34,8 @@ public class SimpleCountDownLatch {
   }
 
   /**
-   * Decrements the count of the latch, releasing all waiting threads when the count reaches zero.
+   * Decrements the count of the latch, releasing all waiting threads when the
+   * count reaches zero.
    * If the current count already equals zero then nothing happens.
    */
   public void countDown() {

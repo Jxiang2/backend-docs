@@ -18,11 +18,11 @@ public class CriticalSection {
     decrementingThread.join();
 
     // Start the threads sequentially
-    //    incrementingThread.start();
-    //    incrementingThread.join();
+    // incrementingThread.start();
+    // incrementingThread.join();
     //
-    //    decrementingThread.start();
-    //    decrementingThread.join();
+    // decrementingThread.start();
+    // decrementingThread.join();
 
     System.out.println("We currently have " + inventoryCounter.getItems() + " items");
   }

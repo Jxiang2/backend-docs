@@ -4,19 +4,19 @@ import java.math.BigInteger;
 
 /**
  * Thread Termination & Daemon Threads
- * Daemons are suitable for background tasks such as garbage collection, which is run by the JVM.
+ * Daemons are suitable for background tasks such as garbage collection, which
+ * is run by the JVM.
  */
 public class ThreadTermination {
 
   public static void main(final String[] args) throws InterruptedException {
     final Thread thread = new Thread(
-      new LongComputationTask(
-        new BigInteger("2000000000"),
-        new BigInteger("100000000")
-      )
-    );
+        new LongComputationTask(
+            new BigInteger("2000000000"),
+            new BigInteger("100000000")));
 
-    // Daemon thread will continue to run in the background, it will not prevent exiting the main thread
+    // Daemon thread will continue to run in the background, it will not prevent
+    // exiting the main thread
     thread.setDaemon(true);
     thread.setName("LongComputationThread");
     thread.start();

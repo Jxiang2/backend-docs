@@ -7,24 +7,22 @@ public class PowerAddition {
   public static void main(final String[] args) throws InterruptedException {
     final PowerAddition powerAddition = new PowerAddition();
     System.out.println(
-      powerAddition.calculateResult(
-        BigInteger.valueOf(50000),
-        BigInteger.valueOf(10000000),
-        BigInteger.valueOf(50000),
-        BigInteger.valueOf(10000000)
-      )
-    );
+        powerAddition.calculateResult(
+            BigInteger.valueOf(50000),
+            BigInteger.valueOf(10000000),
+            BigInteger.valueOf(50000),
+            BigInteger.valueOf(10000000)));
   }
 
   public BigInteger calculateResult(final BigInteger base1,
-                                    final BigInteger power1,
-                                    final BigInteger base2,
-                                    final BigInteger power2) throws InterruptedException {
+      final BigInteger power1,
+      final BigInteger base2,
+      final BigInteger power2) throws InterruptedException {
     final BigInteger result;
     final PowerAdditionThread thread1 = new PowerAdditionThread(base1, power1);
     final PowerAdditionThread thread2 = new PowerAdditionThread(base2, power2);
-    //    thread1.setDaemon(true);
-    //    thread2.setDaemon(true);
+    // thread1.setDaemon(true);
+    // thread2.setDaemon(true);
 
     thread1.start();
     thread2.start();

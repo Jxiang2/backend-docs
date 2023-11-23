@@ -6,7 +6,6 @@ import java.util.NavigableMap;
 import java.util.Random;
 import java.util.TreeMap;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
@@ -48,10 +47,9 @@ public class ReadWriteInventory {
         for (int i = 0; i < 100000; i++) {
           final int upperBoundPrice = random.nextInt(HIGHEST_PRICE);
           final int lowerBoundPrice = upperBoundPrice > 0
-            ? random.nextInt(upperBoundPrice)
-            : 0;
-          final int numberOfItemsInPriceRange =
-            inventoryDatabase.getNumberOfItemsInPriceRange(lowerBoundPrice, upperBoundPrice);
+              ? random.nextInt(upperBoundPrice)
+              : 0;
+          inventoryDatabase.getNumberOfItemsInPriceRange(lowerBoundPrice, upperBoundPrice);
         }
       });
 
@@ -83,10 +81,10 @@ public class ReadWriteInventory {
 
     private final Lock writeLock = reentrantReadWriteLock.writeLock();
 
-    private final Lock lock = new ReentrantLock();
+    // private final Lock lock = new ReentrantLock();
 
     public int getNumberOfItemsInPriceRange(final int lowerPriceBound, final int upperPriceBound) {
-      //      lock.lock();
+      // lock.lock();
       readLock.lock();
       try {
         final Integer fromKey = priceToCountMap.ceilingKey(lowerPriceBound);
@@ -98,8 +96,7 @@ public class ReadWriteInventory {
         }
 
         final NavigableMap<Integer, Integer> rangeOfPrices = priceToCountMap.subMap(
-          fromKey, true, toKey, true
-        );
+            fromKey, true, toKey, true);
 
         int sum = 0;
         for (final int numberOfItemsForPrice : rangeOfPrices.values()) {
@@ -110,12 +107,12 @@ public class ReadWriteInventory {
 
       } finally {
         readLock.unlock();
-        //        lock.unlock();
+        // lock.unlock();
       }
     }
 
     public void addItem(final int price) {
-      //      lock.lock();
+      // lock.lock();
       writeLock.lock();
       try {
         final Integer numberOfItemsForPrice = priceToCountMap.get(price);
@@ -127,12 +124,12 @@ public class ReadWriteInventory {
 
       } finally {
         writeLock.unlock();
-        //        lock.unlock();
+        // lock.unlock();
       }
     }
 
     public void removeItem(final int price) {
-      //      lock.lock();
+      // lock.lock();
       writeLock.lock();
       try {
         final Integer numberOfItemsForPrice = priceToCountMap.get(price);
@@ -143,7 +140,7 @@ public class ReadWriteInventory {
         }
       } finally {
         writeLock.unlock();
-        //        lock.unlock();
+        // lock.unlock();
       }
     }
 

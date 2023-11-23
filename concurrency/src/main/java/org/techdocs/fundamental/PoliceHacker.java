@@ -12,10 +12,9 @@ public class PoliceHacker {
     final Vault vault = new Vault(random.nextInt(MAX_PASSWORD_LENGTH));
 
     final Set<Thread> threads = Set.of(
-      new AscendingHackerThread(vault),
-      new DescendingHackerThread(vault),
-      new PoliceThread()
-    );
+        new AscendingHackerThread(vault),
+        new DescendingHackerThread(vault),
+        new PoliceThread());
 
     threads.forEach(Thread::start);
   }

@@ -17,7 +17,6 @@ public class Sync {
     incrementingThread.join();
     decrementingThread.join();
 
-
     System.out.println("We currently have " + inventoryCounter.getItems() + " items");
   }
 

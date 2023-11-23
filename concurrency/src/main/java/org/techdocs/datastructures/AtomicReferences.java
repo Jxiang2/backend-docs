@@ -13,7 +13,7 @@ import java.util.concurrent.locks.LockSupport;
 public class AtomicReferences {
 
   public static void main(final String[] args) throws InterruptedException {
-    //    final StandardStack<Integer> stack = new StandardStack<>();
+    // final StandardStack<Integer> stack = new StandardStack<>();
     final LockFreeStack<Integer> stack = new LockFreeStack<>();
     final Random random = new Random();
 
@@ -40,7 +40,7 @@ public class AtomicReferences {
     for (int i = 0; i < poppingThreads; i++) {
       final Thread thread = new Thread(() -> {
         while (true) {
-          final Integer pop = stack.pop();
+          stack.pop();
         }
       });
 
@@ -55,8 +55,7 @@ public class AtomicReferences {
     Thread.sleep(10000);
 
     System.out.printf(
-      "%,d operations were performed in 10 seconds %n", stack.getCounter()
-    );
+        "%,d operations were performed in 10 seconds %n", stack.getCounter());
   }
 
   public static class LockFreeStack<T> {
@@ -74,7 +73,8 @@ public class AtomicReferences {
         if (this.head.compareAndSet(currentHeadNode, newHeadNode)) {
           break;
         } else {
-          // this.head is changed by another thread, wait for 1 nanosecond, and try the loop again
+          // this.head is changed by another thread, wait for 1 nanosecond, and try the
+          // loop again
           LockSupport.parkNanos(1);
         }
       }
@@ -91,7 +91,8 @@ public class AtomicReferences {
         if (this.head.compareAndSet(currentHeadNode, newHeadNode)) {
           break;
         } else {
-          // this.head is changed by another thread after read it. wait for 1 nanosecond, and try the loop again
+          // this.head is changed by another thread after read it. wait for 1 nanosecond,
+          // and try the loop again
           LockSupport.parkNanos(1);
           currentHeadNode = this.head.get();
         }

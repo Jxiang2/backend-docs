@@ -42,9 +42,8 @@ public class MatricesGenerator {
   }
 
   private static void saveMatrixToFile(
-    final FileWriter fileWriter,
-    final float[][] matrix
-  ) throws IOException {
+      final FileWriter fileWriter,
+      final float[][] matrix) throws IOException {
     for (int r = 0; r < N; r++) {
       final StringJoiner stringJoiner = new StringJoiner(", ");
       for (int c = 0; c < N; c++) {
