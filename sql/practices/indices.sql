@@ -106,6 +106,6 @@ EXPLAIN SELECT customer_id FROM customers WHERE state = 'CA' ORDER BY points;
 
 # 11. conclusion
 # 一、construct indexes using commonly used query-columns ; And query those columns in SELECT and ORDER BY clauses.
-# 二、 Indexes' orders are important!. If we do CREATE INDEX idx_state_points ON customers (state, points);
+# 二、 Indexes orders are important!. If we do CREATE INDEX idx_state_points ON customers (state, points);
 # Then CREATE INDEX idx_state_points ON customers (state) is redundant;
 # But CREATE INDEX idx_state_points (points, state) or CREATE INDEX idx_state_points (points) are not redundant;

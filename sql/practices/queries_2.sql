@@ -121,7 +121,7 @@ WHERE e1.salary > (
 );
 
 
-#9 get invoices that are larger than the client's average invoice amount
+#9 get invoices that are larger than the clients average invoice amount
 USE sql_invoicing;
 
 SELECT i1.invoice_id, i1.number, i1.invoice_total

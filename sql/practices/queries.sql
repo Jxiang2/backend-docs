@@ -165,7 +165,7 @@ INNER JOIN order_statuses os
     ON o.status = os.order_status_id
 
 
-#18 (EX) retrieve payments and their corresponding clients' names and payment methods
+#18 (EX) retrieve payments and their corresponding clients names and payment methods
 USE sql_invoicing;
 
 SELECT p.payment_id, c.name, pm.name AS method, p.amount
@@ -197,7 +197,7 @@ LEFT OUTER JOIN shippers s
     ON o.shipper_id = s.shipper_id;
 
 
-#21 (EX) return each product's productId, name and quantity been ordered
+#21 (EX) return each products productId, name and quantity been ordered
 USE sql_store;
 
 SELECT p.product_id, p.name, oi.quantity
